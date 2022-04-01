@@ -1,0 +1,71 @@
+{
+  "name": "@flashfix/i18n-modules",
+  "description": "Modular approach for i18n in Webpack, similar to CSS Modules",
+  "author": "flashfix <max@flashfix.app>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": "flashfixapp/i18n-modules",
+  "bugs": "https://github.com/flashfixapp/i18n-modules/issues",
+  "version": "1.0.0",
+  "keywords": [
+    "webpack",
+    "modules",
+    "i18n modules",
+    "phrase",
+    "phraseapp",
+    "i18n",
+    "translation",
+    "locale",
+    "language",
+    "localization"
+  ],
+  "bin": {
+    "i18n-modules": "./bin/cli.js"
+  },
+  "files": [
+    "bin/*.js",
+    "lib/loaders/*.js",
+    "lib/*.js",
+    "lib/*.json",
+    "!lib/*.test.js"
+  ],
+  "main": "lib/plugin.js",
+  "scripts": {
+    "reinstall": "rm -rf node_modules package-lock.json && npm install",
+    "lint": "eslint ./",
+    "sync": "DEBUG=i18n_modules I18N_MODULES_CONTEXT=./fixtures ./bin/cli.js",
+    "start": "DEBUG=i18n_modules I18N_MODULES_CONTEXT=./fixtures webpack serve --config fixtures/webpack.config.js --port 3000",
+    "start:emit": "DEBUG=i18n_modules PREVIEW_EMIT_FILE=true I18N_MODULES_CONTEXT=./fixtures webpack serve --config fixtures/webpack.config.js --port 3000",
+    "build": "DEBUG=i18n_modules I18N_MODULES_CONTEXT=./fixtures webpack --config fixtures/webpack.config.js",
+    "test:build": "npm run build && PREVIEW_EMIT_FILE=true npm run build && npm run sync build && npm run sync update && npm run sync clean",
+    "check": "npm run test:build && npm test && npm run lint",
+    "prepublishOnly": "npm run check && echo \"\\033[0;32mReady to publish\\033[0m\"",
+    "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\""
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "clean-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^9.2.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.12.0",
+    "eslint-config-flashfix-base": "^1.0.2",
+    "highlight.js": "^11.5.0",
+    "html-webpack-plugin": "^5.1.0",
+    "mocha": "^9.2.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-manifest-plugin": "^5.0.0"
+  },
+  "dependencies": {
+    "chalk": "4.1.2",
+    "debug": "^4.3.1",
+    "lodash": "^4.17.19",
+    "schema-utils": "^4.0.0",
+    "webpack-sources": "^3.2.3"
+  },
+  "peerDependencies": {
+    "webpack": "^5.x.x"
+  }
+}
