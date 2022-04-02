@@ -32,4 +32,11 @@ node_modules/*
 # MacOS
 .DS_Store
 
-fixtures/assets
+fixtures/regular/assets
+# next.js
+fixtures/nextjs/.next/
+fixtures/nextjs/out/
+
+# production
+fixtures/nextjs/build
+fixtures/nextjs/node_modules

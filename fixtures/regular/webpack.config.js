@@ -4,7 +4,7 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const I18nModules = require('../lib/plugin');
+const I18nModules = require('../../lib/plugin');
 
 const emitFile = Boolean(process.env.PREVIEW_EMIT_FILE);
 

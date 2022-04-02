@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const chalk = require('chalk');
+const { red, green, bold } = require('kleur');
 const { validate } = require('schema-utils');
 
 const { debug, rebase, getContext, getOptions } = require('../lib/utils');
@@ -21,12 +21,12 @@ debug('initialized the CLI with options %O', options);
 const getElapsed = (timestamp) => ((Date.now() - timestamp) / 1000).toFixed(2);
 
 const successExit = (message) => {
-  console.log(chalk.bold.green(message));
+  console.log(bold(green(message)));
   process.exit(0);
 };
 
 const errorExit = (message) => {
-  console.error(chalk.bold.red(message));
+  console.error(bold(red(message)));
   process.exit(1);
 };
 

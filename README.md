@@ -155,9 +155,38 @@ We support `I18N_MODULES_CONTEXT` env variable to set current working directory 
 "scripts": {
   "lang:push": "i18n-modules build && phraseapp push",
   "lang:pull": "phraseapp pull && i18n-modules update",
+  "lang:clean": "i18n-modules clean",
   "lang:sync": "npm run lang:push && npm run lang:pull",
 }
 ```
+
+## NextJS users
+
+NextJS builds in dev mode incrementally. That means with default config you will always have merge conflicts in the dictionaries folder. To avoid this only emit full dictionaries during full build.
+
+This is an example implementation of `next.config.js` that achieves this:
+
+```javascript
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+const I18nModules = require('@flashfix/i18n-modules');
+
+
+const getConfig = (phase) => {
+  const nextConfig = {
+    webpack: (config) => {
+      config.plugins.push(
+        new I18nModules({ emitFile: phase !== PHASE_DEVELOPMENT_SERVER }),
+      );
+      return config;
+    },
+  };
+
+  return nextConfig;
+};
+
+module.exports = getConfig;
+```
+
 
 ## Debugging
 

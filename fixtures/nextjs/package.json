@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "reinstall": "rm -rf node_modules package-lock.json && npm install",
+    "export": "NEXT_TELEMETRY_DEBUG=1 NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production next export",
+    "prod": "NEXT_TELEMETRY_DEBUG=1 NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production next start",
+    "build": "NEXT_TELEMETRY_DEBUG=1 NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production next build",
+    "start": "NEXT_TELEMETRY_DEBUG=1 NEXT_TELEMETRY_DISABLED=1 next dev"
+  },
+  "devDependencies": {
+    "next": "^12.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}

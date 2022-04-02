@@ -1,5 +1,5 @@
 {
-  "extends": ["flashfix-base"],
+  "extends": ["flashfix"],
   "env": {
     "node": true
   },
