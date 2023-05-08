@@ -1,11 +1,11 @@
 {
-  "name": "@flashfix/i18n-modules",
+  "name": "@gaia-law/i18n-modules",
   "description": "Modular approach for i18n in Webpack, similar to CSS Modules",
-  "author": "flashfix <max@flashfix.app>",
+  "author": "GAIA Technologies <webfrontend@gaia.law>",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "repository": "flashfixapp/i18n-modules",
-  "bugs": "https://github.com/flashfixapp/i18n-modules/issues",
+  "repository": "gaia-law/i18n-modules",
+  "bugs": "https://github.com/gaia-law/i18n-modules/issues",
   "version": "1.0.1",
   "keywords": [
     "webpack",
