@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "gaia-law/i18n-modules",
   "bugs": "https://github.com/gaia-law/i18n-modules/issues",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "keywords": [
     "webpack",
     "modules",
@@ -56,7 +56,8 @@
     "webpack": "^5.71.0",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^4.7.4",
-    "webpack-manifest-plugin": "^5.0.0"
+    "webpack-manifest-plugin": "^5.0.0",
+    "yaml": "^2.2.2"
   },
   "dependencies": {
     "debug": "^4.3.1",

@@ -1,5 +1,5 @@
-import de from '../dictionaries/de-DE.json';
-import en from '../dictionaries/en-US.json';
+import de from '../dictionaries/de-DE.yml';
+import en from '../dictionaries/en-US.yml';
 
 console.log(de, en);
 
