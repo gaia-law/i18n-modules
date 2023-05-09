@@ -16,7 +16,7 @@
       "description": "Absolute or relative path to the dictionary files with [locale_code] in file name.",
       "type": "string",
       "minLength": 1,
-      "pattern": "\\[locale_code\\].*\\.json$"
+      "pattern": "\\[locale_code\\]"
     },
     "emitFile": {
       "description": "Enables/Disables emitting dictionary files",
@@ -25,6 +25,21 @@
     "getId": {
       "description": "A function to convert file paths to module ids",
       "instanceof": "Function"
+    },
+    "dictionaryAdapter": {
+      "description": "Serializer for dictionary",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stringify": {
+          "description": "Creates string representation of the tree",
+          "instanceof": "Function"
+        },
+        "parse": {
+          "description": "Creates the tree object from a string",
+          "instanceof": "Function"
+        }
+      }
     }
   },
   "required": ["keysRoot", "moduleEnding", "dictionaryPattern"],

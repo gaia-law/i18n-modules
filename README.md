@@ -42,7 +42,14 @@ module.exports = {
   //  moduleEnding: string, same as above
   //  filePath: string, an absolute path to the translations module file
   // Must return a stable unique string
-  getId(keysRoot, moduleEnding, filePath) => idString,
+  getId: (keysRoot, moduleEnding, filePath) => idString,
+  
+  // Optional, an object to customize the format dictionarys are kept in
+  // Defaults to JSON representation
+  dictionaryAdapter: {
+    parse: (buffer) => someObj,
+    stringify: (obj) => someStr,
+  }
 };
 ```
 
